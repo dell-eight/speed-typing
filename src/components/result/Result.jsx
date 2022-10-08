@@ -11,9 +11,9 @@ import {
 
 const Result = ({text, countdown}) => {
 
-    const calculateWordcount = () => {
+    const calculateCharCount = () => {
         if (text !== '') {
-          return text.trim().split(' ').length;
+          return text.trim().split('').length;
         } else return 0;
     };
     
@@ -26,8 +26,8 @@ const Result = ({text, countdown}) => {
             <TableCell>{countdown}</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Word Count:</TableCell>
-            <TableCell>{calculateWordcount()}</TableCell>
+            <TableCell>Char Count:</TableCell>
+            <TableCell>{calculateCharCount()}</TableCell>
           </TableRow>
         </TableBody>
       </Table>

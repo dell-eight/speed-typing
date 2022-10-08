@@ -7,8 +7,8 @@ import ErrorIcon from '@mui/icons-material/Error';
 
 const Game = ({ text, countdown, countdownValue, isDisabled,
     updateIsDisabled, updateTextValue, updateCountdown, updateOpenSettings }) => {
-    const idx = Math.floor(Math.random() * quotes.length);
     
+    const idx = Math.floor(Math.random() * quotes.length);
     
     const [isGameOver, setGameOver] = useState(null);
     const [isError, setError] = useState(false);
@@ -25,10 +25,7 @@ const Game = ({ text, countdown, countdownValue, isDisabled,
             updateTextValue(value);
             setCharIndex(charIndex + 1)
             setError(false);
-        }
-        else {
-            setError(true);
-        } 
+        } else setError(true);
     };
 
 
@@ -55,9 +52,9 @@ const Game = ({ text, countdown, countdownValue, isDisabled,
                 });
                 }, 1000);
                 updateIsDisabled(true);
-
             } else {
                 updateIsDisabled(false);
+                
                 setGameOver(true);
                 setCharIndex(0);
                 setError(false);

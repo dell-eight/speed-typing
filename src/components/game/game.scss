@@ -1,0 +1,65 @@
+$main-font: 'Silkscreen', cursive;
+$mono-font: 'Ubuntu Mono', monospace;
+
+.textArea-overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+    .error-icon {
+        position: absolute;
+        font-size: 50px;
+        z-index: 20;
+        color: red;
+    }
+
+    .overlay {
+        position: absolute;
+    }
+
+    .input {
+        z-index: 10;
+        background: rgba($color: #000000, $alpha: .3);
+    }
+
+}
+
+textarea.typing-box {
+    padding: 0.5em;
+    margin: 2rem 0px;
+    width: 90%;
+    background: #363646;
+    color: white;
+    font-family: $mono-font;
+    font-size: 1.25rem;
+    line-height: 1.5em;
+    resize: none;
+}
+    
+
+
+button.start-btn {
+    margin-bottom: 2rem;
+    transition: all .5s ease;
+    font-family: $main-font !important;
+    font-size: 16px !important;
+    letter-spacing: 0.2em !important;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    textarea.typing-box { 
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    textarea.typing-box { 
+        width: 100%;
+        font-size: 1.1rem;
+    }
+}

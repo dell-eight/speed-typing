@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&family=Ubuntu+Mono&display=swap');
+
+
+@mixin flex($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+}
+
+$main-font: 'Silkscreen', cursive;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to top right, rgb(36, 37, 54), rgb(56, 78, 99));
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+    font-family: $main-font;
+    letter-spacing: 0.35em;
+    padding-top: 2rem;
+}
+
+.App {
+    
+    .header {
+        @include flex(row, space-between);
+
+        .blank {
+            width: 30px;
+        }
+
+        .settings {
+            position: relative;
+            background-color: #363646;
+            display: flex;
+
+            .settings-icon {
+                font-size: 30px;
+                cursor: pointer;
+                transition: all .3s ease;
+    
+                &:hover {
+                    transform: scale(1.4) rotate(60deg);
+                    padding: 2px;
+                    border-radius: 100%;
+                    background-color: #363646
+                }
+            }
+        }
+    }
+
+    .game {
+        @include flex(column, center);
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .App {
+
+        .header{
+
+            .blank{
+                display: none;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+       
+    }
+}
+
+
+@media screen and (max-width: 769px) {
+    .App {
+        .header{
+            .blank{
+                display: none;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+      
+    }
+}
